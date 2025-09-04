@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const app = express();
 
+// Motor de plantillas Liquid
 const engine = new Liquid({
   root: [
     path.resolve(__dirname, 'templates'),
@@ -18,12 +19,22 @@ app.engine('liquid', engine.express());
 app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'liquid');
 
-app.use(express.static('public'));
+// Archivos estáticos
+app.use(express.static('public')); // sirve lo de public/
+app.use('/assets', express.static(path.join(__dirname, 'assets'))); // imágenes
+app.use('/src', express.static(path.join(__dirname, 'src'))); // css directo
 
+// Filtro Liquid para assets
+engine.registerFilter('asset_url', (filename) => {
+  return `/assets/${filename}`;
+});
+
+// Datos mock
 const products = require('./data/products.json');
 const collections = require('./data/collections.json');
 const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-8'));
 
+// Ruta principal
 app.get('/', (req, res) => {
   res.render('index', { 
     products, 
@@ -32,6 +43,7 @@ app.get('/', (req, res) => {
   });
 });
 
+// Arrancar server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

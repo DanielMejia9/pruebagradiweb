@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2",
-    "liquidjs": "^10.20.1"
+    "liquidjs": "^10.20.1",
+    "node-sass-middleware": "^1.1.0"
   },
   "devDependencies": {
     "css-loader": "^6.7.3",

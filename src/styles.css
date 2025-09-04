@@ -4,3 +4,66 @@ body {
   margin: 0;
   padding: 0;
 }
+
+header.header {
+  display: flex;
+  width: 100vw;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #000000; 
+}
+
+
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1e1e1e;          
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: 1px solid #6c63ff;     
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment-icons span {
+  margin-right: 10px;
+  white-space: nowrap;           
+}
+
+.payment-icons img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;            
+  background: #fff;             
+  object-fit: cover;             
+  padding: 4px;                 
+}
+
+ul.lista-header li {
+    float: left;
+    color: white;
+    margin: 0 10px;
+    list-style: none;
+}
+
+ul.lista-header {
+    top: 0px !important;
+    position: relative;
+}
+
+.cart-icon {
+  font-size: 36px;     
+  color: white;
+  background-color: #7B2FFF;
+  padding: 5px 11px 5px 11px;
+  border-radius: 4px;  
+}
+
+li.carrito {
+    top: -9px;
+    position: relative;
+}
