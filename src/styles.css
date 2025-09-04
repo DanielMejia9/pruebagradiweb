@@ -5,15 +5,6 @@ body {
   padding: 0;
 }
 
-header.header {
-  display: flex;
-  width: 100vw;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background: #000000; 
-}
 
 
 .payment-icons {
@@ -66,4 +57,26 @@ ul.lista-header {
 li.carrito {
     top: -9px;
     position: relative;
+}
+
+
+/* Bloque principal */
+.header {
+  display: flex;
+  width: 100vw;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 1); /* negro sólido al inicio */
+  transition: background-color 0.3s ease;
+}
+
+/* Modificador cuando hay scroll */
+.header--scrolled {
+  background-color: rgb(0 0 0 / 32%);  /* traslúcido */
+  backdrop-filter: blur(6px);
 }
