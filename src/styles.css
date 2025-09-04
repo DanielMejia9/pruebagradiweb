@@ -300,3 +300,69 @@ li.carrito {
 .footer__socials a:hover {
   opacity: 0.7;
 }
+
+p.metodo-footer svg {
+    top: 7px !important;
+    position: relative;
+    left: 10px;
+}
+
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: #762CFB;
+  color: #fff;
+  padding: 7px 0 0 0;
+  height: 22px;
+  font-size: 27px;
+  font-weight: 900;
+  font-family: var(--font-primary, Arial, sans-serif);
+  position: relative;
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* espacio entre ítems */
+  min-width: 200%; /* clave: asegura duplicación */
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.marquee__item p {
+  margin: 0;
+  font-size: 0.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.marquee__item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* mueve exactamente la mitad del contenido */
+  }
+}
+
+/* Hover = pausa */
+.marquee:hover .marquee__inner {
+  animation-play-state: paused;
+}
