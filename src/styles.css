@@ -200,6 +200,18 @@ li.carrito {
   transition: opacity 0.3s ease;
 }
 
+.to-light-purple {
+    --tw-gradient-to: #856ffc var(--tw-gradient-to-position);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-top: 0.3rem;
+    background-image: linear-gradient(to right, #4a3aff, #856ffc);
+}
+
+.footer__nav-links p {
+    height: 6px;
+}
+
 .footer__nav-links a:hover {
   opacity: 0.7;
 }
