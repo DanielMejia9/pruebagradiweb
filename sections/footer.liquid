@@ -19,7 +19,7 @@
           <!-- Policies -->
           <div>
             <a href="{{ link.url }}">
-              <p class="text-[12px] font-medium leading-[12px] hover:opacity-70 sm:text-center">{{ link.label }}</p>
+              <p>{{ link.label }}</p>
             </a>
           </div>
         {% else %}
@@ -39,7 +39,7 @@
         {% for link in settings.footer.settings.links2 %}
             <div>
             <a href="{{ link.url }}">
-                <p class="text-[12px] font-medium leading-[12px] hover:opacity-70 sm:text-center">{{ link.label }}</p>
+                <p>{{ link.label }}</p>
             </a>
             </div>
         {% endfor %}
@@ -59,9 +59,9 @@
   <!-- SUSCRIPCIÓN Y REDES SOCIALES -->
   <div class="footer__column--right">
     <div class="footer__subscribe-text">
-      <p class="text-[12px]">{{ settings.footer.settings.subscribe.text }}</p>
+      <p>{{ settings.footer.settings.subscribe.text }}</p>
       <div class="footer__subscribe-box">
-        <input class="order-transparent appearance-none bg-transparent focus:border-transparent focus:ring-0"
+        <input
           placeholder="{{ settings.footer.settings.subscribe.placeholder }}">
         {{ settings.footer.settings.subscribe.button_icon | raw }}
       </div>
@@ -70,7 +70,7 @@
         {% for social in settings.footer.settings.socials %}
           <div>
             <a target="{{ social.target }}" href="{{ social.url }}">
-              <p class="text-[12px] font-medium hover:opacity-70">{{ social.label }}</p>
+              <p>{{ social.label }}</p>
             </a>
           </div>
         {% endfor %}
