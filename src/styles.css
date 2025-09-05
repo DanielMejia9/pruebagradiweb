@@ -718,6 +718,24 @@ p.metodo-footer svg {
   header.header.distorcion {
     width: 380px;
   }
+
+  .product-list {
+    display: flex;
+    flex-wrap: nowrap; /* Una sola fila horizontal */
+    overflow-x: auto; /* Habilita scroll horizontal */
+    gap: 1px;
+    padding: 10px;
+  }
+
+  .product-card {
+    width: 300px; /* tamaño fijo para cada producto en móvil */
+    flex-shrink: 0; /* evita que se encojan */
+  }
+  
+  /* Opcional: quitar scroll bar visible en algunos navegadores */
+  .product-list::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Versión tablet */
