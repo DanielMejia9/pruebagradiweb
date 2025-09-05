@@ -628,6 +628,11 @@ p.metodo-footer svg {
     gap: 0rem;
     width: 296px;
   }
+
+  .section-collection {
+    /* Degradado movido hacia arriba */
+    background: radial-gradient(circle at 50% 20%, #6b38f1 0%, #111111 30%);
+}
 }
 
 /* Versión tablet */
