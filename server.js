@@ -34,6 +34,12 @@ const products = require('./data/products.json');
 const collections = require('./data/collections.json');
 const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-8'));
 
+app.use((req, res, next) => {
+  console.log("Ruta actual:", req.path); // <- imprime en consola
+  res.locals.currentPath = req.path;
+  next();
+});
+
 // Ruta principal
 app.get('/', (req, res) => {
   res.render('index', { 
@@ -48,3 +54,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+
+
+

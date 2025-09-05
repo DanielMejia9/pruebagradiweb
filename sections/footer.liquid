@@ -27,9 +27,11 @@
           <div>
             <a href="{{ link.url }}">
               <p>{{ link.label }}</p>
-              <div class="to-light-purple"></div>
+               {% if currentPath == link.url %}
+                    <div class="to-light-purple"></div>
+                {% endif %}
             </a>
-          </div>         
+          </div>       
         {% endif %}
       {% endfor %}
     </div>
