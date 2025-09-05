@@ -204,8 +204,8 @@ li.carrito {
     --tw-gradient-to: #856ffc var(--tw-gradient-to-position);
     background-position: bottom;
     background-repeat: no-repeat;
-    padding-top: 0.3rem;
-    background-image: linear-gradient(to right, #4a3aff, #856ffc);
+    padding-top: 0.2rem;
+    background: linear-gradient(90deg, #762CFB 0%, #B45FFF 100%);
 }
 
 .footer__nav-links p {
