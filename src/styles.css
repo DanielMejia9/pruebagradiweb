@@ -30,6 +30,11 @@
     font-style: normal
 }
 
+.__variable_23b992 {
+    --font-aeonik: "__aeonik_23b992","__aeonik_Fallback_23b992"
+}
+
+
 :root {
   --font-countach: "__countach_382e21", sans-serif;
   --font-aeonik: "__aeonik_23b992", sans-serif;
@@ -365,4 +370,46 @@ p.metodo-footer svg {
 /* Hover = pausa */
 .marquee:hover .marquee__inner {
   animation-play-state: paused;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 1360px; /* opcional, para limitar el ancho */
+  margin: 0 auto;
+}
+
+.banner-container img {
+  width: 100%;       /* hace la imagen responsiva */
+  height: auto;      /* mantiene la proporción */
+  display: block;
+}
+
+.banner-btn {
+  position: absolute;
+  bottom: 20px;      /* separación desde abajo */
+  left: 20px;        /* separación desde la izquierda */
+}
+
+.banner-btn button {
+  background-color: rgb(118 44 251);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-size: 14px; */
+  transition: background 0.3s ease;
+  height: 72px;
+  width: 320px;
+  bottom: 2rem;
+}
+
+.banner-btn button:hover {
+  background-color: #333;
+}
+
+.btn-font-bold {
+    font-weight: 700;
+    font-size: 20px;
 }
