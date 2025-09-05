@@ -669,9 +669,10 @@ p.metodo-footer svg {
 
 .section-collection {
   max-width: 1440px;
-  margin: 2rem auto;
+  margin: 0rem auto;
   padding: 4rem 1rem 0;
   text-align: center;
+    background: radial-gradient(circle at center, #6b38f1 0%, #111111 40%);
 }
 
 .section-collection h1 {
