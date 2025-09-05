@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/src/styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const products = document.querySelectorAll(".product-card");
+    const viewAllBtn = document.getElementById("viewAllBtn");
+
+    // Mostrar solo 4 productos
+    products.forEach((product, index) => {
+      if (index > 3) product.classList.add("hidden");
+    });
+
+    // Mostrar todos al presionar el botón
+    viewAllBtn.addEventListener("click", () => {
+      products.forEach(product => product.classList.remove("hidden"));
+      viewAllBtn.style.display = "none"; // Ocultar botón después
+    });
+  });
+</script>
 
 
   <title>Shopify Simulator | Gradiweb</title>
