@@ -630,7 +630,8 @@ p.metodo-footer svg {
   }
 
   .section-collection {
-    background: radial-gradient(circle at 50% 20%, #6b38f1 0%, #111111 30%);
+    background: radial-gradient(circle at 58% 8%, #6b38f1 -3%, #111111 10%)/*radial-gradient(circle at 50% 20%, #6b38f1 0%, #111111 30%)*/;
+    
   }
 
    
