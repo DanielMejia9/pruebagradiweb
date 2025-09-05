@@ -630,9 +630,33 @@ p.metodo-footer svg {
   }
 
   .section-collection {
-    /* Degradado movido hacia arriba */
     background: radial-gradient(circle at 50% 20%, #6b38f1 0%, #111111 30%);
-}
+  }
+
+   .footer {
+    flex-direction: column; /* apila verticalmente */
+    align-items: center;
+  }
+
+  .footer__nav {
+    order: 1; /* primero */
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .footer__column--right {
+    order: 2; /* segundo */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer__column--left {
+    order: 3; /* último */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 /* Versión tablet */
