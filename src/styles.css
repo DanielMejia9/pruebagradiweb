@@ -695,6 +695,29 @@ p.metodo-footer svg {
   p.metodo-footer {
       width: 293px;
   }
+
+  
+
+  .hamburger-menu {
+    display: block !important; /* visible en móvil */
+  }
+
+  div#hamburger-menu div {
+    margin: 3px 0;
+  }
+  
+  .header__logo-branch {
+    display: none;
+  }
+
+  .footer__column--left-celular {
+    width: 185px;
+    color: white;
+  }
+
+  header.header.distorcion {
+    width: 380px;
+  }
 }
 
 /* Versión tablet */
@@ -703,3 +726,24 @@ p.metodo-footer svg {
         padding: 3rem 1rem 0;
     }
 }
+
+/* Estilos del botón hamburguesa */
+.hamburger-menu {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  display: none;
+  margin: 10px;
+  padding: 5px;
+}
+
+.hamburger-menu div {
+  height: 4px;
+  background-color: #6b38f1; /* morado */
+  border-radius: 2px;
+}
+
+
