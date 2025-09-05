@@ -59,6 +59,14 @@
           { "label": "INSTAGRAM", "url": "https://www.instagram.com/shuffle?igsh=YzAwZjE1ZTI0Zg==", "target": "_ig" }
         ]
       }
+    },
+    "banner": {
+        "boton":"VIEW THE COLLECTION",
+        "url":"/"
+    },
+    "marque":{
+        "texto":"SHUFFLE ESSENCIALS"
     }
+
   }
 }
