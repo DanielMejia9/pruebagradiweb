@@ -35,7 +35,6 @@ const collections = require('./data/collections.json');
 const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-8'));
 
 app.use((req, res, next) => {
-  console.log("Ruta actual:", req.path); // <- imprime en consola
   res.locals.currentPath = req.path;
   next();
 });
@@ -52,7 +51,7 @@ app.get('/', (req, res) => {
 // Arrancar server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  // console.log(`Server running on http://localhost:${PORT}`);
 });
 
 
