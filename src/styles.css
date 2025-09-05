@@ -1,44 +1,37 @@
+/* Fuente principal Countach */
 @font-face {
-    font-family: __countach_382e21;
-    src: url('/assets/fonts/6598cf716b109bbe-s.p.otf') format("opentype");
-    font-display: swap;
-    font-weight: 400;
-    font-style: normal
+  font-family: "__countach_382e21";
+  src: url('/assets/fonts/6598cf716b109bbe-s.p.otf') format("opentype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
 }
-
 @font-face {
-    font-family: __countach_382e21;
-    src: url('/assets/fonts/6598cf716b109bbe-s.p.otf') format("opentype");
-    font-display: swap;
-    font-weight: 700;
-    font-style: normal
+  font-family: "__countach_382e21";
+  src: url('/assets/fonts/6598cf716b109bbe-s.p.otf') format("opentype");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
 }
 
+/* Fallback para Countach (ajustado a Arial) */
 @font-face {
-    font-family: __aeonik_23b992;
-    src: url('/assets/fonts/a982720e4eb0c695-s.p.otf') format("opentype");
-    font-display: swap;
-    font-weight: 400;
-    font-style: normal
+  font-family: "__countach_Fallback_382e21";
+  src: local("Arial");
+  ascent-override: 104.61%;
+  descent-override: 26.15%;
+  line-gap-override: 26.15%;
+  size-adjust: 76.47%;
 }
 
-@font-face {
-    font-family: __aeonik_23b992;
-    src: url('/assets/fonts/99f5e52c58083955-s.p.otf') format("opentype");
-    font-display: swap;
-    font-weight: 700;
-    font-style: normal
+/* Clases para usar en el HTML */
+.__className_382e21 {
+  font-family: "__countach_382e21", "__countach_Fallback_382e21";
+}
+.__variable_382e21 {
+  --font-countach: "__countach_382e21", "__countach_Fallback_382e21";
 }
 
-.__variable_23b992 {
-    --font-aeonik: "__aeonik_23b992","__aeonik_Fallback_23b992"
-}
-
-
-:root {
-  --font-countach: "__countach_382e21", sans-serif;
-  --font-aeonik: "__aeonik_23b992", sans-serif;
-}
 
 
 
@@ -412,4 +405,98 @@ p.metodo-footer svg {
 .btn-font-bold {
     font-weight: 700;
     font-size: 20px;
+}
+
+
+:root {
+  --gradient-color: #232128; /* tu variable definida */
+}
+
+:root {
+  --gradient-color: #232128;
+}
+
+.marqueeBig {
+  font-family: var(--font-countach), monospace;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 90px;
+  font-size: 88px;
+  font-weight: 900;
+  font-family: var(--font-primary, Arial, sans-serif);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Overlay en el lado izquierdo */
+.marqueeBig::before,
+.marqueeBig::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;   /* ancho del degradado, ajusta a gusto */
+  height: 100%;
+  z-index: 2;     /* encima del texto */
+  pointer-events: none; /* no bloquea clics */
+}
+
+.marqueeBig::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,     /* negro sólido */
+    rgba(0, 0, 0, 0) 100%    /* transparente hacia el centro */
+  );
+}
+
+.marqueeBig::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 0%,     /* negro sólido */
+    rgba(0, 0, 0, 0) 100%    /* transparente hacia el centro */
+  );
+}
+
+
+.marquee__innerBig {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espacio entre ítems */
+  min-width: 200%; /* clave: asegura duplicación */
+  animation: marquee-scroll 40s linear infinite;
+
+}
+
+.marquee__itemBig {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.marquee__itemBig p {
+  margin: 0;
+  font-size: 0.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 88px;
+}
+
+.marquee__itemBig svg {
+  flex-shrink: 0;
+  width: 50px;
+  height:50px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* mueve exactamente la mitad del contenido */
+  }
 }
