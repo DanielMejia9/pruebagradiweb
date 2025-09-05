@@ -566,6 +566,12 @@ p.metodo-footer svg {
   margin: 0;
 }
 
+
+.footer__column--left-celular
+ {
+    display: none;
+}
+
 /*Version Celular*/
 @media (max-width: 431px) {
 
