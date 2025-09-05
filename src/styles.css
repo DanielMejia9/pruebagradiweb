@@ -743,6 +743,11 @@ p.metodo-footer svg {
   .product-list::-webkit-scrollbar {
     display: none;
   }
+
+  .footer__column--left-celular
+  {
+      display: block;
+  }
 }
 
 /* Versión tablet */
