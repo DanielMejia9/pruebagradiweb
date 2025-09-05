@@ -8,21 +8,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const products = document.querySelectorAll(".product-card");
-    const viewAllBtn = document.getElementById("viewAllBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const productList = document.querySelectorAll(".product-card");
+  const viewAllBtn = document.getElementById("viewAllBtn");
 
-    // Mostrar solo 4 productos
-    products.forEach((product, index) => {
-      if (index > 3) product.classList.add("hidden");
-    });
-
-    // Mostrar todos al presionar el botón
-    viewAllBtn.addEventListener("click", () => {
-      products.forEach(product => product.classList.remove("hidden"));
-      viewAllBtn.style.display = "none"; // Ocultar botón después
-    });
+  // Mostrar solo 4 al inicio
+  productList.forEach((card, index) => {
+    if (index < 4) {
+      card.classList.add("show"); // visibles
+    } else {
+      card.style.display = "none"; // ocultos
+    }
   });
+
+  let expanded = false; // estado: colapsado al inicio
+
+  viewAllBtn.addEventListener("click", () => {
+    if (!expanded) {
+      // Mostrar todos los productos
+      productList.forEach((card, index) => {
+        if (index >= 4) {
+          card.style.display = "block";
+        }
+      });
+
+      // Animación en scroll solo para los nuevos
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      productList.forEach((card, index) => {
+        if (index >= 4) observer.observe(card);
+      });
+
+      // Cambiar a "VIEW LESS"
+      viewAllBtn.textContent = "VIEW LESS";
+      expanded = true;
+
+    } else {
+      // Ocultar de nuevo y dejar solo 4
+      productList.forEach((card, index) => {
+        if (index >= 4) {
+          card.style.display = "none";
+          card.classList.remove("show"); // quitar la animación por si se vuelve a abrir
+        }
+      });
+
+      // Cambiar a "VIEW ALL"
+      viewAllBtn.textContent = "VIEW ALL";
+      expanded = false;
+
+      // Hacer scroll arriba hacia la sección de productos
+      document.querySelector(".featured-products").scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+
+
 </script>
 
 
